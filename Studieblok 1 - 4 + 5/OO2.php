@@ -24,7 +24,7 @@
           public function setBirthdate($Birthdate) {
             $this->Date = $Birthdate;
           }
-
+          
 
           // public function getUsername() {
           //   return $this->username;
