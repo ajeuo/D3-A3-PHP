@@ -6,7 +6,7 @@
     });
 
     //ongeveer mijn huis (behalve locatie)
-    $huis = new Huis('Egelslag', '42', 'Assen');
+    $huis = new Huis('Grutolaan', '35', 'Beilen');
 
     $huis->setKamers(2);    
     $huis->setToiletten(1);
@@ -18,7 +18,7 @@
     echo $huis->report();
 
     // anders huis
-    $huis = new Huis('Orteliusstraat', '151-1', 'Amsterdam');
+    $huis = new Huis('WegStraat', '69', 'Groningen');
 
     $huis->setKamers(4);    
     $huis->setToiletten(2);
@@ -28,4 +28,4 @@
     $huis->setWoz(330000);
 
     echo $huis->report();
-?>
+?> 
