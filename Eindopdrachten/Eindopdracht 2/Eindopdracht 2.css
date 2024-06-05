@@ -1,0 +1,17 @@
+body{
+    overflow: hidden;
+}
+
+.container{
+    margin-top: 20vh;
+    margin-left: 30vw;
+    margin-right: 30vw;
+
+    border: 5px solid black;
+}
+
+.kaart{
+    display:inline-block;
+    border: 5px solid black;
+    padding: 4vw;
+}
