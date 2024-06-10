@@ -10,7 +10,6 @@
             $this->kolommen = 2;
 
             $this->maakKaarten();
-            //
             //return; 
         }
         
@@ -50,11 +49,12 @@
             $output = "";
             //de rijen en kolommen aanmaken
             for($r=0; $r<$this->rijen; $r++) {
+                $output .="<div class='row'>";
                 for($k=0; $k<$this->kolommen; $k++){
                     //De berekening voor de kolommen en rijen
                     $output .= $this->kaarten[$r*4+$k];
                 }
-                $output .="<br>";
+                $output .="</div>";
             }
             return $output;
         }

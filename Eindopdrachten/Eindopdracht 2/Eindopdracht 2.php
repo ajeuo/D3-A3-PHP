@@ -16,14 +16,13 @@
 
             $bord = new Bord();
             $stukken = new Stukken();
-        ?>
 
-        <?php 
             echo '<div class="container">';
                 $bord->setKolommen(4);    
                 $bord->setRijen(4);
                 echo $bord;
             echo '</div>'; 
+
             ?>
         
     </body>
