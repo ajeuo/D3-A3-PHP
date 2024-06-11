@@ -13,7 +13,7 @@
             //maak de div, geef het een klasse en id
             $output = "<div class='kaart' id='".$this->id."'>";
             $output .= "<img id='clicked' onclick='' src='./fotos/RIS.png'>";  
-            //$output .= $this->id;  
+            //$output .= $this->id;
             $output .= "</div>";
             
             return $output;
