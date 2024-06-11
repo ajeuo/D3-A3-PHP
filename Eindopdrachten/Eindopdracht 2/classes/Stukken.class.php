@@ -11,18 +11,17 @@
 
         public function __toString(){
             //maak de div, geef het een klasse en id
-            $output = "<div class='kaart' id='".$this->id."'>";
-            $output .= "<img id='clicked' onclick='' src='./fotos/RIS.png'>";  
-            //$output .= $this->id;
-            $output .= "</div>";
+
+            $output = "<a href='?kaartnummer=".$this->id."' class='kaart' id='".$this->id."'>";
+            $output .= "<img id='clicked' src='./fotos/RIW.png'>";  
+            //$output .= $this->id;  
+            $output .= "</a>";
+
             
             return $output;
         }     
+    
         
-        function onClick(){
-            
-        }
-
     }
 
 ?>
