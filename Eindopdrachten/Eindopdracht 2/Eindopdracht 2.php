@@ -1,11 +1,21 @@
 <?php
     session_start();
-    if(isset($_SESSION['counter'])){
-        $_SESSION['counter']++;
-    } else {
 
-        $_SESSION['counter'] = 1;
-    }
+
+    if(isset($_GET['kaartid'])){
+        $_SESSION['kaart1'] = $_GET['kaartid']; 
+        // echo $_SESSION['kaart1']; // later weg doen
+        } else {
+            echo "nog geen kn";
+        }
+        
+    if(isset($_GET['cijfer'])){
+        $_SESSION['kaartcijfer'] = $_GET['cijfer']; 
+        echo $_SESSION['kaartcijfer'];
+    } 
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -23,13 +33,10 @@
                 // echo "Klassen: " . $class_name . "<br>";
                 include "classes/" . $class_name . '.class.php';
             });
-
-            $bord = new Bord();
-            $stukken = new Stukken();
+            
+            $bord = new Bord(4,4);
 
             echo '<div class="container">';
-                $bord->setKolommen(4);    
-                $bord->setRijen(4);
                 echo $bord;
             echo '</div>'; 
 
@@ -37,5 +44,3 @@
         
     </body>
 </html>
-
-
