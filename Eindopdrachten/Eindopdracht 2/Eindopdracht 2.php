@@ -1,8 +1,6 @@
 <?php
     spl_autoload_register(function ($class_name) {
-        // $class_name pakt de klasse
         // echo "Klassen: " . $class_name . "<br>";
-        echo $class_name;
         include "classes/" . $class_name . '.class.php';
     });
 

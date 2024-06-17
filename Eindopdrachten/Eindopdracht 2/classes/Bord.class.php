@@ -1,4 +1,4 @@
-<?php 
+<?php   
 
 class Bord {
     private $kolommen;
