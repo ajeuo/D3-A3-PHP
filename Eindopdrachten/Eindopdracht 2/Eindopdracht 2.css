@@ -3,6 +3,8 @@ body{
 }
 
 .container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
 
     position: absolute;
     border: 5px solid black;
@@ -13,7 +15,8 @@ body{
 
 .kaart{
     display:inline-block;
-    border: 0.5px solid black;
+    position: relative;
+    border: 0.8px solid black;
     height: 100px;
     width: 100px;
     
@@ -26,3 +29,19 @@ img{
     height: 100px;
     width: 100px;
 }
+
+.kaart > img {
+
+}
+
+.kaart > p {
+    position: absolute;
+    z-index: 100;
+    font-weight: bold;
+    color: white;
+    top: -10px;
+    left: 10px;
+
+    font-size: 30px;
+}
+
