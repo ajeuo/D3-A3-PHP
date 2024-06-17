@@ -29,7 +29,8 @@
 
             echo '<div class="container">';
                 $bord->setKolommen(4);    
-                $bord->setRijen(4);
+                $bord->setRijen(2);
+                echo $bord;
                 echo $bord;
             echo '</div>'; 
 
