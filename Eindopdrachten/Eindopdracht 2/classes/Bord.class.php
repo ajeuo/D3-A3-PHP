@@ -83,7 +83,6 @@ class Bord {
                     array_push($this->kaarten, $stuk);
                 }
             }
-
             shuffle($this->kaarten);
         }
                 
