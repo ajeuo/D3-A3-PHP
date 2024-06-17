@@ -5,7 +5,8 @@ class Bord {
     private $rijen;
     private $kaarten;
     private $paren = array();
-    
+    private $counter;
+
     public function __construct($rijen, $kolommen){
         $this->setRijen($rijen);
         $this->setKolommen($kolommen);
@@ -14,10 +15,20 @@ class Bord {
         
         $this->clickHandler();
         
-        //return; 
+        
+       
+        // if (isset($_GET['paren'])) {
+        // $_SESSION['shuffleparen'] = $_GET['paren'];
+        // }
+
+        // if ($_SESSION['counter'] == 0){
+        //     shuffle($_SESSION['shuffleparen']);
+            // }
         }
 
-        private function clickHandler(){
+        public function clickHandler(){
+            $this->counter++;
+            echo $this->counter;
             if(isset($_GET['kaartid'])){
                 // ??? setopen(true)
                 $this->kaarten[$_GET['kaartid']]->setOpen(true);
@@ -55,24 +66,25 @@ class Bord {
         
             // shuffle($this->paren);  
         
-
-        //de kaarten 
-        for($p = 0; $p < $this->kolommen*$this->rijen/2; $p++){
-            array_push($this->paren, $p);
-            array_push($this->paren, $p);
-            }
-
             
-                // shuffle($this->paren);
+
+
+            //de kaarten 
+            for($p = 0; $p < $this->kolommen*$this->rijen/2; $p++){
+                array_push($this->paren, $p);
+                array_push($this->paren, $p);
+            }
             
             $this->kaarten = array();
             for($r=0; $r<$this->rijen; $r++) {
                 for($k=0; $k<$this->kolommen; $k++){
-                $stuk = new Kaart($r*$this->kolommen+$k);
-                $stuk->setNummer($this->paren[$r*$this->kolommen+$k]);
-                array_push($this->kaarten, $stuk);
+                    $stuk = new Kaart($r*$this->kolommen+$k);
+                    $stuk->setNummer($this->paren[$r*$this->kolommen+$k]);
+                    array_push($this->kaarten, $stuk);
                 }
             }
+
+            shuffle($this->kaarten);
         }
                 
         public function __toString(){

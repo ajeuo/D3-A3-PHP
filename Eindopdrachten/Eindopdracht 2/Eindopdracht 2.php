@@ -1,21 +1,28 @@
 <?php
+    spl_autoload_register(function ($class_name) {
+        // $class_name pakt de klasse
+        // echo "Klassen: " . $class_name . "<br>";
+        echo $class_name;
+        include "classes/" . $class_name . '.class.php';
+    });
+
     session_start();
 
+    if (isset($_SESSION['bord'])){
+        $bord = $_SESSION['bord'];
+    } else {
+        $bord = new Bord(4,4);
+        $_SESSION['bord'] = $bord;
+    }
 
-    if(isset($_GET['kaartid'])){
-        $_SESSION['kaart1'] = $_GET['kaartid']; 
-        // echo $_SESSION['kaart1']; // later weg doen
+        
+        if(isset($_GET['kaartid'])){
+           $bord->clickHandler();
         } else {
             echo "nog geen kn";
         }
         
-    if(isset($_GET['cijfer'])){
-        $_SESSION['kaartcijfer'] = $_GET['cijfer']; 
-        echo $_SESSION['kaartcijfer'];
-    } 
-
-    
-
+        
 ?>
 
 <!DOCTYPE html>
@@ -28,16 +35,9 @@
 </head>
     <body>
         <?php
-            spl_autoload_register(function ($class_name) {
-                // $class_name pakt de klasse
-                // echo "Klassen: " . $class_name . "<br>";
-                include "classes/" . $class_name . '.class.php';
-            });
-            
-            $bord = new Bord(4,4);
 
             echo '<div class="container">';
-                echo $bord;
+            echo $bord;
             echo '</div>'; 
 
             ?>
