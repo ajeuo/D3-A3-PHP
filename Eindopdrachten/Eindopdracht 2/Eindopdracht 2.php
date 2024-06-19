@@ -13,14 +13,29 @@
         $_SESSION['bord'] = $bord;
     }
 
+  
+    if (isset($_GET['kaartid'])) {
+        $bord->clickHandler();
+    
+        $current_kaartid = $_GET['kaartid'];
+    
+        // haal de vorige kaartid op als het bestaat
+        $previous_kaartid = isset($_SESSION['previous_kaartid']) ? $_SESSION['previous_kaartid'] : 'None';
+    
+        // de vorige kaartid opslaan
+        $_SESSION['previous_kaartid'] = $current_kaartid;
+    
+        echo "Current Kaart ID: " . $current_kaartid . "<br>";
+        echo "Previous Kaart ID: " . $previous_kaartid . "<br>";
+    }
+
         
-        if(isset($_GET['kaartid'])){
-           $bord->clickHandler();
-        } else {
-            echo "nog geen kn";
-        }
-        
-        
+    if(isset($_GET['cijfer'])){
+        $_SESSION['kaartgetal'] = $_GET['cijfer']; 
+        echo "kaartgetal: " . $_SESSION['kaartgetal'];
+    }
+
+
 ?>
 
 <!DOCTYPE html>

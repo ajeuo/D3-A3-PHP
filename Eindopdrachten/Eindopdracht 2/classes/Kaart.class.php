@@ -15,7 +15,7 @@
             $this->id = $id;
         } 
             
-        public function setOpen($open){  
+        public function setOpen($open){
             $this->open =$open;
 
             // staat nu hieronder
