@@ -4,6 +4,7 @@
         private $id;
         private $image= './fotos/RIW.png';
         private $open = false;
+        // private $matched = false;
         private $cijfer;
 
         public function __construct($id){
@@ -17,18 +18,19 @@
             
         public function setOpen($open){
             $this->open =$open;
-
-            // staat nu hieronder
-            // if ($this->open) {
-            //     $this->image = './fotos/TH.png';
-            // } else {
-            //     $this->image ='./fotos/RIW.png';
-            // }
         }
 
         public function setNummer($cijfer){
             $this->cijfer = $cijfer;
         }
+
+        // public function setMatched($matched) {
+        //     $this->matched = $matched;
+        // }
+    
+        // public function isMatched() {
+        //     return $this->matched;
+        // }
                     
         public function __toString(){
 

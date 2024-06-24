@@ -3,9 +3,9 @@
 class Bord {
     private $kolommen;
     private $rijen;
-    private $kaarten;
+    public $kaarten;
     private $paren = array();
-    private $counter;
+    public $counter;
 
     public function __construct($rijen, $kolommen){
         $this->setRijen($rijen);
@@ -18,17 +18,13 @@ class Bord {
     public function clickHandler(){
         $this->counter++;
 
-        echo "Counter: " . $this->counter . "<br>";
+        echo "Counter: " . $this->counter . "<br> <br>";
 
 
         if(isset($_GET['kaartid'])){
             // ??? setopen(true)
             $this->kaarten[$_GET['kaartid']]->setOpen(true);
         } 
-
-        // if(){
-
-        // } 
 
     }
         
