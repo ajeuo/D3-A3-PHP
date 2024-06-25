@@ -37,7 +37,7 @@ class Bord {
                 return;
             }
         }
-        //dus als alle kaarten niet open zijn dan geeft hij deze melding
+        //dus als alle kaarten niet open zijn dan geeft hij niet deze melding
         echo "<h2>You Win!</h2>";
         // - 1 omdat de counter op 1 begint zonder clicks
         echo "<p>You have clicked ". $this->counter - 1 ." times </p>";

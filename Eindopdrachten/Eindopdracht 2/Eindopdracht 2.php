@@ -46,7 +46,6 @@
         // echo "Current Kaart Getal: " . $current_kaartgetal . "<br>";
         // echo "Vorige Kaart Getal: " . $previous_kaartgetal . "<br>";
         // echo "Voor de Vorige Kaart Getal: " . $prev_prev_kaartgetal . "<br>";
-
         // $matched = $prev_prev_kaartgetal == $previous_kaartgetal;
 
         if ($bord->counter % 2 == 0) {
