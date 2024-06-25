@@ -20,6 +20,10 @@
             $this->open =$open;
         }
 
+        public function isOpen() {
+            return $this->open;
+        }
+        
         public function setNummer($cijfer){
             $this->cijfer = $cijfer;
         }

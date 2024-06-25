@@ -18,7 +18,7 @@ class Bord {
     public function clickHandler(){
         $this->counter++;
 
-        echo "Counter: " . $this->counter . "<br> <br>";
+        // echo "Counter: " . $this->counter . "<br> <br>";
 
 
         if(isset($_GET['kaartid'])){
@@ -26,6 +26,21 @@ class Bord {
             $this->kaarten[$_GET['kaartid']]->setOpen(true);
         } 
 
+    }
+
+    public function checkWin() {
+
+        //hij kijkt alle kaarten
+        foreach ($this->kaarten as $kaart) {
+            //controlleerd als de kaart niet open is
+            if (!$kaart->isOpen()) {
+                return;
+            }
+        }
+        //dus als alle kaarten niet open zijn dan geeft hij deze melding
+        echo "<h2>You Win!</h2>";
+        // - 1 omdat de counter op 1 begint zonder clicks
+        echo "<p>You have clicked ". $this->counter - 1 ." times </p>";
     }
         
     private function setKolommen($kolommen){

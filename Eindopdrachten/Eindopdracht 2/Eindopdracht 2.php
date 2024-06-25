@@ -27,9 +27,9 @@
             // de vorige vorige kaartid opslaan
             $_SESSION['prev_prev_kaartid'] = $previous_kaartid;
         
-            echo "Current Kaart ID: " . $current_kaartid . "<br>";
-            echo "Vorige Kaart ID: " . $previous_kaartid . "<br>";
-            echo "Voor de vorige Kaart ID: " . $prev_prev_kaartid . "<br> <br>";
+            // echo "Current Kaart ID: " . $current_kaartid . "<br>";
+            // echo "Vorige Kaart ID: " . $previous_kaartid . "<br>";
+            // echo "Voor de vorige Kaart ID: " . $prev_prev_kaartid . "<br> <br>";
         }
 
             
@@ -43,16 +43,16 @@
         $_SESSION['previous_kaartgetal'] = $current_kaartgetal;
         $_SESSION['prev_prev_kaartgetal'] = $previous_kaartgetal;
 
-        echo "Current Kaart Getal: " . $current_kaartgetal . "<br>";
-        echo "Vorige Kaart Getal: " . $previous_kaartgetal . "<br>";
-        echo "Voor de Vorige Kaart Getal: " . $prev_prev_kaartgetal . "<br>";
+        // echo "Current Kaart Getal: " . $current_kaartgetal . "<br>";
+        // echo "Vorige Kaart Getal: " . $previous_kaartgetal . "<br>";
+        // echo "Voor de Vorige Kaart Getal: " . $prev_prev_kaartgetal . "<br>";
 
         // $matched = $prev_prev_kaartgetal == $previous_kaartgetal;
 
         if ($bord->counter % 2 == 0) {
             if ($previous_kaartgetal !== 'None' && $prev_prev_kaartgetal == $previous_kaartgetal) {
                 //als ik current_kaart getal doe in plaats van prev_prev_kaartgetal dan slaat hij het verkeerde kaart id op
-                echo "match! <br>";
+                //echo "match! <br>";
                 $bord->kaarten[$_GET['kaartid']]->setOpen(true);
             } 
             elseif ($previous_kaartid !== 'None' || $current_kaartgetal == $previous_kaartgetal && $prev_prev_kaartid !== 'None' || $current_kaartgetal == $previous_kaartgetal) {
@@ -61,6 +61,7 @@
                     $bord->kaarten[$prev_prev_kaartid]->setOpen(false);
                 }
             }
+            $bord->checkWin();
         }
 
     ?>
