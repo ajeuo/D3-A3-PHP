@@ -73,11 +73,10 @@
         <link rel="stylesheet" type="text/css" href="Eindopdracht 2.css">
     </head>
         <body>
-            <?php
-                echo '<div class="container">';
-                echo $bord;
-                echo '</div>'; 
-                ?>
-            
+        <?php
+            echo '<div class="container">';
+            echo $bord;
+            echo '</div>'; 
+        ?>
         </body>
     </html>

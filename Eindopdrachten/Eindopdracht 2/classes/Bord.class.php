@@ -91,7 +91,7 @@ class Bord {
     }
                 
     public function __toString(){
-        $output = "";
+        $output = "<div class='container'>";
         //de rijen en kolommen aanmaken
         for($r=0; $r<$this->rijen; $r++) {
             for($k=0; $k<$this->kolommen; $k++){
@@ -100,9 +100,10 @@ class Bord {
             }
         }
         $output .=
-            "<form action='./reset.php'>
+            "</div>
+            <div class='knopie'><form action='./reset.php'>
             <input type='submit' value='Reset'/>
-            </form>";
+            </form></div>";
         return $output;
         }
         
